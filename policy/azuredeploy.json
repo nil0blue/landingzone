@@ -39,7 +39,7 @@
             "na": "0000-00-00",
             "": "0000-00-00"
         },
-		"apiVersion": "[if(empty(variables('effectiveResourceType')),variables('apiVersionLookup')[''], variables('apiVersionLookup')[variables('effectiveResourceType')])]",
+		"apiVersion": "[if(empty(variables('effectiveResourceType')),variables('apiVersionLookup')[''], variables('apiVersionLookup')[variables('effectiveResourceType')])]"
     },
     "resources": [
         {
