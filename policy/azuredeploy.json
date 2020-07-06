@@ -48,7 +48,10 @@
             "name": "[variables('input').name]",
             "apiVersion": "[variables('apiversion')]",
             "location": "[parameters('location')]",
-            "Properties": "[variables('input').Properties]"
+            "Properties": "[variables('input').Properties]",
+			"parametersLink": {
+                    "uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.parameters.json"
+                }
         }
 		
     ]
