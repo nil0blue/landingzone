@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+		"location": {
+            "defaultValue": "[deployment().location]",
+            "type": "String",
+            "metadata": {
+                "description": "Location where the resources will be deployed."
+            }
+        },
+		"input": {
+            "type": "object"
+        }
+        
+    },
+    "variables": {
+		"input": "[parameters('input')]",
+        "resourceType": "[parameters('input').ResourceType]",
+		"ExtensionResourceType": "[if(and(contains(parameters('input'), 'ExtensionResourceType'),not(empty(parameters('input').ExtensionResourceType))),parameters('input').ExtensionResourceType, json('null'))]",
+        "type": "[if(and(contains(parameters('input'), 'type'),not(empty(parameters('input').type))),parameters('input').type, json('null'))]",
+        "effectiveResourceType": "[coalesce(variables('ExtensionResourceType'),variables('ResourceType'),variables('type'))]",
+		"apiVersionLookup": {
+            "Microsoft.Resources/resourceGroups": "2019-05-10",
+            "Microsoft.Authorization/policyAssignments": "2019-06-01",
+            "Microsoft.Authorization/policyDefinitions": "2018-05-01",
+            "Microsoft.Authorization/PolicySetDefinitions": "2018-05-01",
+            "Microsoft.Authorization/roleDefinitions": "2018-01-01-preview",
+            "Microsoft.Authorization/roleAssignments": "2018-09-01-preview",
+            "Microsoft.PolicyInsights/remediations": "2019-07-01",
+            "Microsoft.ContainerService/ManagedClusters": "2019-10-01",
+            "Microsoft.KeyVault/vaults": "2018-02-14",
+            "Microsoft.Network/virtualWans": "2019-09-01",
+            "Microsoft.Network/virtualHubs": "2019-09-01",
+            "Microsoft.Network/virtualNetworks": "2017-10-01",
+            "Microsoft.Network/azureFirewalls": "2019-04-01",
+            "/providers/Microsoft.Management/managementGroups": "2020-05-01",
+            "/subscriptions" : "2020-05-01",
+            "na": "0000-00-00",
+            "": "0000-00-00"
+        },
+		"apiVersion": "[if(empty(variables('effectiveResourceType')),variables('apiVersionLookup')[''], variables('apiVersionLookup')[variables('effectiveResourceType')])]",
+    },
+    "resources": [
+        {
+            "condition": "[equals(toLower(variables('effectiveResourceType')),toLower('Microsoft.Authorization/policyDefinitions'))]",
+            "type": "Microsoft.Authorization/policyDefinitions",
+            "name": "[variables('input').name]",
+            "apiVersion": "[variables('apiversion')]",
+            "location": "[parameters('location')]",
+            "Properties": "[variables('input').Properties]"
+        }
+		
+    ]
+}
