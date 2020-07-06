@@ -11,7 +11,7 @@
         },
 		"input": {
 	    "defaultValue": {
-        "Name": "Deny-Subnet-Without-Nsg",
+        "Name": "Deny-Subnet-Without-Nsg1",
         "ResourceId": "/providers/Microsoft.Management/managementGroups/FARZ/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
         "ResourceName": "Deny-Subnet-Without-Nsg",
         "ResourceType": "Microsoft.Authorization/policyDefinitions",
