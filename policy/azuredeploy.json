@@ -1,18 +1,8 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {
-		"location": {
-            "defaultValue": "[deployment().location]",
-            "type": "String",
-            "metadata": {
-                "description": "Location where the resources will be deployed."
-            }
-        },
-		"input": {
-            "type": "object"
-        }
-        
+	"parametersLink": {
+        "uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.parameters.json"
     },
     "variables": {
 		"input": "[parameters('input')]",
@@ -47,11 +37,8 @@
             "type": "Microsoft.Authorization/policyDefinitions",
             "name": "[variables('input').name]",
             "apiVersion": "[variables('apiversion')]",
-            "location": "[parameters('location')]",
+            "location": "[variables('input').location]",
             "Properties": "[variables('input').Properties]",
-			"parametersLink": {
-                    "uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.parameters.json"
-                }
         }
 		
     ]
