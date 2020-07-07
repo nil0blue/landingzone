@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "input": {
-      "Value": {
+      "value": {
         "Name": "Deny-Subnet-Without-Nsg",
 		"Location": "East US",
         "ResourceId": "/providers/Microsoft.Management/managementGroups/FARZ/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
