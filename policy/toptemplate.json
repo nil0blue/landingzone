@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+    },
+    "variables": {
+        "dummy" : "xyz"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2019-10-01",
+            "location": "[deployment().location]",            
+            "name": "Landing-Zone-Deployment",            
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+					"uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.json"
+				},                
+                "parametersLink": {
+                    "uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.parameters.json"
+                }
+            }
+        }         
+		
+    ]
+}
