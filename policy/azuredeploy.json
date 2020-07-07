@@ -1,8 +1,10 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-	"parametersLink": {
-        "uri": "https://raw.githubusercontent.com/nil0blue/landingzone/master/policy/azuredeploy.parameters.json"
+	"parameters": {
+        "input": {
+            "type": "object"
+        }
     },
     "variables": {
 		"input": "[parameters('input')]",
