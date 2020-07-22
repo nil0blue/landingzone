@@ -7,13 +7,13 @@
         "Name": "Deny-Subnet-Without-Nsg",
 		"Location": "East US",
         "ResourceId": "/providers/Microsoft.Management/managementGroups/FARZ/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
-        "ResourceName": "Deny-Subnet-Without-Nsg",
+        "ResourceName": "Deny-Subnet-Without-Nsg-7-7-2020-09-55-AM",
         "ResourceType": "Microsoft.Authorization/policyDefinitions",
         "SubscriptionId": null,
         "PolicyDefinitionId": "/providers/Microsoft.Management/managementGroups/FARZ/providers/Microsoft.Authorization/policyDefinitions/Deny-Subnet-Without-Nsg",
         "Properties": {
           "Description": null,
-          "DisplayName": "Deny-Subnets-Without-NSG-7-6-2020-11-40-PM",
+          "DisplayName": "Deny-Subnets-Without-NSG-7-7-2020-09-55-AM",
           "Mode": "All",
           "Parameters": {},
           "PolicyRule": {
