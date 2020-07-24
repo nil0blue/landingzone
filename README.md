@@ -5,7 +5,8 @@
 The Deploy button deploys the landing zone policies across the subscription.
 |:--------------|
 When the Terraform variables file under the migration folder is updated, the terraform action pipeline is triggered to create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. 
-|:--------------|
+
+
 ## Prerequisites
 A service principal needs to be created for Terraform and it's client id and secret must be noted.
 A storage account must be created with a container. This is used for storing the terraform state.
