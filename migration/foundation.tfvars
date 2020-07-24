@@ -2,7 +2,8 @@ region = "centralus"
 
 vnets-map = {
     VNET1_Prod = {
-        name = "VNET1_Prod1"
+        name = "VNET1_Prod"
+        
         address_space = ["10.0.0.0/16"]
         subnets-map = {
             subnet1 = {
