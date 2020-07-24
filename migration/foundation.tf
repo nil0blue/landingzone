@@ -1,5 +1,5 @@
-variable "client_secret" {}
-variable "subscription_id" {}
+#variable "client_secret" {}
+#variable "subscription_id" {}
 
 variable "region" {
   type = string
@@ -12,10 +12,10 @@ provider "azurerm" {
   version = "~>2.0"
   features {}
   
-  client_id     = "a0947a78-88f3-46f2-a166-d8cbf7aa3b88"
-  client_secret = var.client_secret
-  tenant_id     = "14841bc0-087f-44e4-978e-21deaf99be5d"
-  subscription_id = var.subscription_id
+  #client_id     = "a0947a78-88f3-46f2-a166-d8cbf7aa3b88"
+  #client_secret = var.client_secret
+  #tenant_id     = "14841bc0-087f-44e4-978e-21deaf99be5d"
+  #subscription_id = var.subscription_id
 }
 
 variable "vnets-map" {
