@@ -4,5 +4,34 @@
 
 The Deploy button deploys the landing zone policies across the subscription.
 
-Also, a Terraform Action Pipeline will create the landing zone Vnets/Subnets to Azure when any of the manifest files under the migration folder are updated. 
+A Terraform Action Pipeline is provided to create the landing zone Vnets/Subnets in the subscription when any of the manifest files under the migration folder are updated. 
 
+## Prerequisites
+A service principal needs to be created for Terraform and it's client id and secret must be noted.
+A storage account must be created with a container. This is used for storing the terraform state.
+
+## The foundation.tf manifest must be modified to supply the storage account and container name
+```terraform
+terraform {
+  backend "azurerm" {
+    storage_account_name = "storage_account_name"
+    container_name       = "storage_container_name"
+  }
+}
+```
+
+## The following secrets must be added to the GitHub Account
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `arm_client_id` | `string` | | Azure Service Principal client_id |
+| `arm_client_secret` | `string` | | Azure Service Principal client_secret |
+| `arm_subscription_id` | `string` | | Azure subscription |
+| `arm_tenant_id` | `string` | | Azure Tenant id |
+| `arm_access_key` | `string` | | Azure Storage access key |
+| `variables` | `string` | `""` | Comma-separated string of Terraform variables |
+| `path` | `string` | `.` | Path to Terraform directory, defaults to the working directory |
+| `varfile` | `string` | `.` | Name of tfvars file, defaults to variables.tfvars |
+        
+        
+        
