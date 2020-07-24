@@ -16,7 +16,7 @@ vnets-map = {
         }
     },
     VNET1_Tier1 = {
-        name = "VNET1_App1"
+        name = "VNET1_Application"
         address_space = ["10.0.0.0/16"]
         subnets-map = {
             subnet1 = {
