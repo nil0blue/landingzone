@@ -3,9 +3,9 @@
 |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://ms.portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fnil0blue%2Flandingzone%2Fmaster%2Fpolicy%2Ftoptemplate.json) |
 
 The Deploy button deploys the landing zone policies across the subscription.
-
-A Terraform Action Pipeline is provided to create the landing zone Vnets/Subnets in the subscription when any of the manifest files under the migration folder are updated. 
-
+|:--------------|
+When the Terraform variables file under the migration folder is updated, the terraform action pipeline is triggered to create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. 
+|:--------------|
 ## Prerequisites
 A service principal needs to be created for Terraform and it's client id and secret must be noted.
 A storage account must be created with a container. This is used for storing the terraform state.
