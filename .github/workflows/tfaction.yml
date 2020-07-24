@@ -1,4 +1,4 @@
-name: TFApplyVM
+name: TFApplyLandingZone
 
 on:
   push:
