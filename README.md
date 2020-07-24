@@ -1,9 +1,9 @@
 ## Landing Zone Policies via ARM Template
 
-| Landing Zone Policies |
+| Deploy the landing zone policies  |
 |:--------------|
 |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://ms.portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fnil0blue%2Flandingzone%2Fmaster%2Fpolicy%2Ftoptemplate.json) |
-|The Deploy button deploys the landing zone policies across the subscription.|
+| The policies are specified in policy/azuredeploy.parameters.json |
 
 
 ## Migration Foundation via Terraform Pipeline
