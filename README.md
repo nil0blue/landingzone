@@ -3,8 +3,9 @@
 |[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://ms.portal.azure.com/?feature.customportal=false#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fnil0blue%2Flandingzone%2Fmaster%2Fpolicy%2Ftoptemplate.json) |
 |The Deploy button deploys the landing zone policies across the subscription.|
 
-When the Terraform variables file under the migration folder is updated, the terraform action pipeline is triggered to create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. 
-|:--------------|
+
+|When the Terraform variables file under the migration folder is updated, the terraform action pipeline is triggered to create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. The action pipeline makes use of the action published in the nil0blue/terraform-azure-pipeline repository |
+
 
 
 ## Prerequisites
