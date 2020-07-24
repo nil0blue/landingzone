@@ -7,7 +7,7 @@
 
 
 ## Migration Foundation via Terraform Pipeline
-When the Terraform variables file under the migration folder is updated, the terraform action pipeline is triggered to create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. The action pipeline makes use of the action published in the nil0blue/terraform-azure-pipeline repository 
+Update the foundation.tfvars file under the migration folder to trigger the Terraform Apply to Azure pipeline. This will create or update the landing zone Vnets/Subnets/VPN Gateway and Local Gateway resources in the subscription which will facilitate the Migration setup. The action pipeline makes use of the action published in the nil0blue/terraform-azure-pipeline repository 
 
 
 
