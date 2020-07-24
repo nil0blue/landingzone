@@ -37,7 +37,7 @@ terraform {
 | `arm_access_key` | `string` | | Azure Storage access key |
 | `variables` | `string` | `""` | Comma-separated string of Terraform variables |
 | `path` | `string` | `.` | Path to Terraform directory, defaults to the working directory |
-| `varfile` | `string` | `.` | Name of tfvars file, defaults to variables.tfvars |
+| `varfile` | `string` | `variables.tfvars` | Name of tfvars file, defaults to variables.tfvars |
         
         
         
