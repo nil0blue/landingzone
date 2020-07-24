@@ -1,20 +1,27 @@
 #variable "client_secret" {}
 #variable "subscription_id" {}
+variable "storage_account_name" {}
+variable "container_name" {}
+
+terraform {
+  backend "azurerm" {
+    storage_account_name = var.storage_account_name
+    container_name       = var.container_name
+  }
+}
 
 variable "region" {
   type = string
 }
-
-
 
 provider "azurerm" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   version = "~>2.0"
   features {}
   
-  #client_id     = "a0947a78-88f3-46f2-a166-d8cbf7aa3b88"
+  #client_id     = var.client_id
   #client_secret = var.client_secret
-  #tenant_id     = "14841bc0-087f-44e4-978e-21deaf99be5d"
+  #tenant_id     = var.tenant_id
   #subscription_id = var.subscription_id
 }
 
