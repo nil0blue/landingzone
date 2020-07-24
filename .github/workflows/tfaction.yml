@@ -1,0 +1,20 @@
+name: TFApplyVM
+
+on:
+  push:
+    paths:
+    - 'migration/**'
+
+jobs:
+  tfapply:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ams0/terraform-apply-for-azure-action@v1
+      with:
+        arm_client_id: ${{ secrets.ARM_CLIENT_ID }}
+        arm_client_secret: ${{ secrets.ARM_CLIENT_SECRET }}
+        arm_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+        arm_tenant_id: ${{ secrets.ARM_TENANT_ID }}
+        arm_access_key: ${{ secrets.ARM_ACCESS_KEY }}
+        path: migration
