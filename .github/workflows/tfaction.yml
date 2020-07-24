@@ -17,5 +17,6 @@ jobs:
         arm_subscription_id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
         arm_tenant_id: ${{ secrets.ARM_TENANT_ID }}
         arm_access_key: ${{ secrets.ARM_ACCESS_KEY }}
+        variables: var=${{ storage_accounnt_name=farzterraformstate,container_name=terraform }}
         path: migration
         varfile: foundation.tfvars
